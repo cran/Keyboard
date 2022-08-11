@@ -110,13 +110,11 @@ y <- matrix(c(0, 1, 0, 0, 0,
 
 sel.comb <- select.mtd.comb.kb(target=0.3, npts=n, ntox=y)
 
-summary.kb(sel.comb)
-plot.kb(sel.comb)
+summary_kb(sel.comb)
+plot_kb(sel.comb)
 
 }
 \references{
-
-
 Yan F, Mandrekar SJ, Yuan Y. Keyboard: A Novel Bayesian Toxicity Probability
 Interval Design for Phase I Clinical Trials.
 \emph{Clinical Cancer Research}. 2017; 23:3994-4003.
@@ -133,6 +131,6 @@ Other drug-combination functions:
 \code{\link{next.comb.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{drug-combination functions}

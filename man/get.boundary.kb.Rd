@@ -77,7 +77,7 @@ posterior distribution curve of the DLT rate of the current dose.
 An attractive feature of the Keyboard design is that its dose escalation and
 de-escalation rules can be tabulated before the onset of the trial. Thus,
 when conducting the trial, no calculation or model fitting is needed, and we
- need to count only the number of DLTs observed at the current dose; 
+ need to count only the number of DLTs observed at the current dose;
 the decision to escalate or de-escalate the dose is based on the pre-tabulated
 decision rules.
 
@@ -89,7 +89,7 @@ For patient safety, we apply the following Bayesian overdose control rule
 after each cohort:
 if at least 3 patients have been treated at the given dose and
 the observed data indicate that the probability of the current dose's toxicity rate being above the target toxicity rate is more
-than 95\%, then we stop the trial to avoid 
+than 95\%, then we stop the trial to avoid
 exposing future patients to these overly toxic doses. The probability
 threshold can be specified with \code{cutoff.eli}. When a dose is
 eliminated, the design recommends the next lower dose for treating the next cohort of patients. If the lowest dose is overly toxic, then the trial terminates early and no dose is selected as the MTD.

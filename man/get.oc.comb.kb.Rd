@@ -116,6 +116,6 @@ Other drug-combination functions:
 \code{\link{select.mtd.comb.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{drug-combination functions}

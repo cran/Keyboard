@@ -113,14 +113,14 @@ oc.obd2.kb <- get.oc.obd2.kb(target.toxicity=target.toxicity,
               target.efficacy= target.efficacy, ncohort=20,
               cohortsize= 3,  p.true= p.true, q.true= q.true)
 oc.obd2.kb
-summary.kb(oc.obd2.kb)
-plot.kb(oc.obd2.kb)
-plot.kb(oc.obd2.kb$selpercent1)
-plot.kb(oc.obd2.kb$selpercent2)
-plot.kb(oc.obd2.kb$selpercent3)
-plot.kb(oc.obd2.kb$npatients)
-plot.kb(oc.obd2.kb$ntox)
-plot.kb(oc.obd2.kb$neff)
+summary_kb(oc.obd2.kb)
+plot_kb(oc.obd2.kb)
+plot_kb(oc.obd2.kb$selpercent1)
+plot_kb(oc.obd2.kb$selpercent2)
+plot_kb(oc.obd2.kb$selpercent3)
+plot_kb(oc.obd2.kb$npatients)
+plot_kb(oc.obd2.kb$ntox)
+plot_kb(oc.obd2.kb$neff)
 }
 
 }
@@ -144,6 +144,6 @@ Other single-agent phase I/II functions:
 \code{\link{select.obd.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{single-agent phase I/II functions}

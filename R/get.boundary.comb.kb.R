@@ -21,11 +21,11 @@
 #' posterior distribution curve of the DLT rate of the current dose.
 #'
 #' \figure{Keyboard.jpg}
-#' 
+#'
 #' An attractive feature of the Keyboard design is that its dose escalation and
 #' de-escalation rules can be tabulated before the onset of the trial. Thus,
 #' when conducting the trial, no calculation or model fitting is needed, and we
-#' need to count only the number of DLTs observed at the current dose; 
+#' need to count only the number of DLTs observed at the current dose;
 #' the decision to escalate or de-escalate the dose is based on the pre-tabulated
 #' decision rules.
 #'
@@ -39,7 +39,7 @@
 #' after each cohort:
 #' if at least 3 patients have been treated at the given dose and
 #' the observed data indicate that the probability of the current combination dose's toxicity rate being above the target toxicity rate is more
-#' than 95\%,  then we exclude this dose and beyond to avoid 
+#' than 95\%,  then we exclude this dose and beyond to avoid
 #' exposing future patients to these overly toxic doses. The probability
 #' threshold can be specified with \code{cutoff.eli}. If the lowest dose
 #' combination (1, 1) is overly toxic, then the trial terminates early, and no dose
@@ -86,12 +86,14 @@
 #' Interval Design for Phase I Clinical Trials.
 #' \emph{Clinical Cancer Research}. 2017; 23:3994-4003.
 #' http://clincancerres.aacrjournals.org/content/23/15/3994.full-text.pdf
-#' 
-#' 
+#'
+#'
 #' Pan H, Lin R, Yuan Y. Keyboard design for phase I drug-combination trials.
 #' \emph{Contemporary Clinical Trials}. 2020.
 #' https://doi.org/10.1016/j.cct.2020.105972
-#'@export
+#'
+#' @import Rcpp methods graphics stats
+#' @export
 get.boundary.comb.kb <- function(target, ncohort, cohortsize,n.earlystop=100,
                                  marginL=0.05, marginR=0.05, cutoff.eli=0.95,offset=0.05,extrasafe=TRUE) {
   ## Get cutoffs for keys

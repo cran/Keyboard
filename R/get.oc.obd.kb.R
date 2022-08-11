@@ -1,7 +1,7 @@
 #' Generate Operating Characteristics to Find the Optimal Biological Dose
 #'
-#' This function generates operating characteristics to find the  optimal biological dose (OBD). 
-#' 
+#' This function generates operating characteristics to find the  optimal biological dose (OBD).
+#'
 #' @param toxicity.low The upper boundary for the low toxicity interval.
 #' @param toxicity.moderate The upper boundary for the moderate toxicity interval.
 #' @param toxicity.high The upper boundary for the high toxicity interval.
@@ -61,8 +61,8 @@
 #'
 #'
 #' }
-#' 
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#'
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' \donttest{
 #' toxicity.low <- 0.15
@@ -85,14 +85,14 @@
 #'              target.efficacy= target.efficacy,
 #'              p.true= p.true, q.true= q.true)
 #' oc.obd.kb
-#' summary.kb(oc.obd.kb)
-#' plot.kb(oc.obd.kb)
-#' plot.kb(oc.obd.kb$selpercent1)
-#' plot.kb(oc.obd.kb$selpercent2)
-#' plot.kb(oc.obd.kb$selpercent3)
-#' plot.kb(oc.obd.kb$npatients)
-#' plot.kb(oc.obd.kb$ntox)
-#' plot.kb(oc.obd.kb$neff)
+#' summary_kb(oc.obd.kb)
+#' plot_kb(oc.obd.kb)
+#' plot_kb(oc.obd.kb$selpercent1)
+#' plot_kb(oc.obd.kb$selpercent2)
+#' plot_kb(oc.obd.kb$selpercent3)
+#' plot_kb(oc.obd.kb$npatients)
+#' plot_kb(oc.obd.kb$ntox)
+#' plot_kb(oc.obd.kb$neff)
 #' }
 #' @family single-agent phase I/II functions
 #'
@@ -101,12 +101,13 @@
 #' \emph{Clinical Cancer Research}. 2017; 23:13-20.
 #'https://clincancerres.aacrjournals.org/content/23/1/13.long
 #'
-#' 
+#'
 #' Liu S, Johnson VE.  A robust Bayesian dose-finding design for phase I/II clinical trials. \emph{Biostatistics}. 2016; 17(2):249-63.
 #' https://academic.oup.com/biostatistics/article/17/2/249/1744018
 #'
 #' Zhou Y, Lee JJ, Yuan Y.  A utility-based Bayesian optimal interval (U-BOIN) phase I/II design to identify the optimal biological dose for targeted and immune therapies. \emph{Statistics in Medicine}. 2019; 38:S5299-5316.
 #' https://onlinelibrary.wiley.com/doi/epdf/10.1002/sim.8361
+#' @import Rcpp methods graphics stats
 #' @export
 get.oc.obd.kb <- function( toxicity.low, toxicity.moderate,toxicity.high, efficacy.low, efficacy.moderate,
                            efficacy.high,target.toxicity, target.efficacy,ncohort=10, cohortsize=3, n.early=100,
@@ -233,7 +234,7 @@ get.oc.obd.kb <- function( toxicity.low, toxicity.moderate,toxicity.high, effica
         selpercent2[i] = sum(dselect2==i)/ntrial*100;
         selpercent3[i] = sum(dselect3==i)/ntrial*100;
     }
-    out=list(name = "get.oc.obd.kb",  ## to identify object for summary.kb() function.
+    out=list(name = "get.oc.obd.kb",  ## to identify object for summary_kb() function.
         selpercent1=selpercent1, selpercent2=selpercent2,selpercent3=selpercent3,npatients=nptsdose, ntox=ntoxdose, neff=neffdose, totaltox=sum(Y)/ntrial,totaleff=sum(E)/ntrial,
              totaln=sum(N)/ntrial, earlystop = sum(dearlystop==199)/ntrial*100,percentstop1=sum(dselect1== 99)/ntrial*100,percentstop2=sum(dselect2== 99)/ntrial*100,percentstop3=sum(dselect3== 99)/ntrial*100,
              simu.setup=data.frame(target.toxicity=target.toxicity, target.efficacy=target.efficacy,p.true=p.true, q.true =q.true,

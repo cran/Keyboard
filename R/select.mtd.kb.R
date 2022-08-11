@@ -57,7 +57,7 @@
 #'   independent components of the trial design. When appropriate, another dose
 #'   selection procedure (e.g., one based on a fitted logistic model) can be used
 #'   to select the MTD after completing the trial using the Keyboard design.
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' ### Single-agent trial ###
 #'
@@ -65,7 +65,7 @@
 #' y <- c(0, 0, 4, 4, 0)
 #'
 #' selmtd <- select.mtd.kb(target=0.3, npts=n, ntox=y)
-#' 
+#'
 #' selmtd
 #'
 #' @family single-agent functions
@@ -76,6 +76,7 @@
 #' Interval Design for Phase I Clinical Trials.
 #' \emph{Clinical Cancer Research}. 2017; 23:3994-4003.
 #' http://clincancerres.aacrjournals.org/content/23/15/3994.full-text.pdf
+#' @import Rcpp methods graphics stats
 #' @export
 select.mtd.kb <- function(target, npts, ntox, cutoff.eli = 0.95,
                           extrasafe = FALSE, offset = 0.05) {

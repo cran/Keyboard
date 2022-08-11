@@ -42,9 +42,9 @@
 #' \enumerate{
 #' \item Selected OBD level using utility function 1 (\code{$obd1}), as described in the Details section. \cr
 #' \item Selected OBD level using utility function 2 (\code{$obd2}), as described in the Details section.  \cr
-#' \item Selected OBD level using utility function 3 (\code{$obd3}), as described in the Details section.  
+#' \item Selected OBD level using utility function 3 (\code{$obd3}), as described in the Details section.
 #' }
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' \donttest{
 #' target.toxicity<-0.3
@@ -63,14 +63,15 @@
 #' @references
 #'  Li DH, Whitmore JB, Guo W, Ji Y.  Toxicity and efficacy probability interval design for phase I adoptive cell therapy dose-finding clinical trials.
 #' \emph{Clinical Cancer Research}. 2017; 23:13-20.
-#'https://clincancerres.aacrjournals.org/content/23/1/13.long 
-#' 
+#'https://clincancerres.aacrjournals.org/content/23/1/13.long
+#'
 #' Liu S, Johnson VE.  A robust Bayesian dose-finding design for phase I/II clinical trials. \emph{Biostatistics}. 2016; 17(2):249-63.
 #' https://academic.oup.com/biostatistics/article/17/2/249/1744018
 #'
 #' Zhou Y, Lee JJ, Yuan Y. A utility-based Bayesian optimal interval (U-BOIN) phase I/II design to identify the optimal biological dose for targeted and immune therapies.
 #' \emph{Statistics in Medicine}. 2019; 38:S5299-5316.
 #' https://onlinelibrary.wiley.com/doi/epdf/10.1002/sim.8361
+#' @import Rcpp methods graphics stats
 #' @export
 select.obd.kb <- function (target.toxicity, target.efficacy, npts , ntox , neff , p1=0.15, p2=0.40, q1=0.3, q2=0.6,
                            cutoff.eli.toxicity= 0.95, cutoff.eli.efficacy=0.3,
@@ -221,7 +222,7 @@ select.obd.kb <- function (target.toxicity, target.efficacy, npts , ntox , neff 
 
 
     # out = list(obd = selectdose);
-    out = list(name = "select.obd.kb",  ## to identify object for summary.kb() function.
+    out = list(name = "select.obd.kb",  ## to identify object for summary_kb() function.
                obd1=selectdose1, obd2=selectdose2, obd3=selectdose3);
 
     return(out)

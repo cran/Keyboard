@@ -30,7 +30,7 @@ combination.}
 \item{dose.curr}{The current dose combination, i.e., the dose combination that was used to treat the most recently enrolled cohort of patients.}
 
 \item{n.earlystop}{The early stopping parameter. If the number of patients
-treated at the current dose reaches \code{n.earlystop}, then we 
+treated at the current dose reaches \code{n.earlystop}, then we
 stop the trial and select the MTD based on the observed
 data.\cr
 The default value is 100.}
@@ -87,7 +87,7 @@ y <- matrix(c(0, 0, 0, 0, 0,
               0, 0, 0, 0, 0), ncol=5, byrow=TRUE)
 
 nxt.comb <- next.comb.kb(target=0.3, npts=n, ntox=y, dose.curr=c(2, 2))
-summary.kb(nxt.comb)
+summary_kb(nxt.comb)
 
 }
 \references{
@@ -107,6 +107,6 @@ Other drug-combination functions:
 \code{\link{select.mtd.comb.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{drug-combination functions}

@@ -65,5 +65,5 @@ Pan H, Lin R, Yuan Y. Keyboard design for phase I drug-combination trials.
 https://doi.org/10.1016/j.cct.2020.105972
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }

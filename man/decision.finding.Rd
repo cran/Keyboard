@@ -38,5 +38,5 @@ decision <- decision.finding (out.matrix=output.matrix, n=6, t=1, r=3)
 decision
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }

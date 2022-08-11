@@ -114,7 +114,7 @@ posterior distribution curve of the DLT rate of the current dose.
 An attractive feature of the Keyboard design is that its dose escalation and
 de-escalation rule can be tabulated before the onset of the trial. Thus,
 when conducting the trial, no calculation or model fitting is needed, and we
-need to count only the number of DLTs observed at the current dose; 
+need to count only the number of DLTs observed at the current dose;
 the decision to escalate or de-escalate the dose is based on the pre-tabulated
 decision rules.
 
@@ -138,7 +138,7 @@ The Keyboard design has two built-in stopping rules:\cr
     the current dose reaches \code{n.earlystop}.
 
 The first stopping rule is a safety rule to protect patients from being exposed to overly toxic doses. The rationale for the second stopping
-rule is that when enough (i.e., \code{n.earlystop}) 
+rule is that when enough (i.e., \code{n.earlystop})
 patients are assigned to a dose, then the dose-finding algorithm has
 approximately converged. Thus, we can stop the trial early and select the
 MTD to minimize the sample size and  the trial duration.
@@ -184,6 +184,6 @@ Other single-agent functions:
 \code{\link{select.mtd.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{single-agent functions}

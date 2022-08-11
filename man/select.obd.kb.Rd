@@ -57,7 +57,7 @@ The default value is 0.3.}
 \enumerate{
 \item Selected OBD level using utility function 1 (\code{$obd1}), as described in the Details section. \cr
 \item Selected OBD level using utility function 2 (\code{$obd2}), as described in the Details section.  \cr
-\item Selected OBD level using utility function 3 (\code{$obd3}), as described in the Details section.  
+\item Selected OBD level using utility function 3 (\code{$obd3}), as described in the Details section.
 }
 }
 \description{
@@ -102,7 +102,7 @@ print(obd)
 \references{
 Li DH, Whitmore JB, Guo W, Ji Y.  Toxicity and efficacy probability interval design for phase I adoptive cell therapy dose-finding clinical trials.
 \emph{Clinical Cancer Research}. 2017; 23:13-20.
-https://clincancerres.aacrjournals.org/content/23/1/13.long 
+https://clincancerres.aacrjournals.org/content/23/1/13.long
 
 Liu S, Johnson VE.  A robust Bayesian dose-finding design for phase I/II clinical trials. \emph{Biostatistics}. 2016; 17(2):249-63.
 https://academic.oup.com/biostatistics/article/17/2/249/1744018
@@ -119,6 +119,6 @@ Other single-agent phase I/II functions:
 \code{\link{get.oc.obd2.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{single-agent phase I/II functions}

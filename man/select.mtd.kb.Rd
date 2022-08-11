@@ -103,6 +103,6 @@ Other single-agent functions:
 \code{\link{get.oc.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{single-agent functions}

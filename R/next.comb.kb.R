@@ -17,7 +17,7 @@
 #'             combination.
 #' @param dose.curr The current dose combination, i.e., the dose combination that was used to treat the most recently enrolled cohort of patients.
 #' @param n.earlystop The early stopping parameter. If the number of patients
-#'                    treated at the current dose reaches \code{n.earlystop}, then we 
+#'                    treated at the current dose reaches \code{n.earlystop}, then we
 #'                    stop the trial and select the MTD based on the observed
 #'                    data.\cr
 #'                    The default value is 100.
@@ -40,7 +40,7 @@
 #'
 #' @return This function returns the recommended dose for treating the next
 #'   cohort of patients (\code{$next_dc}).
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' ### Drug-combination trial ###
 #'
@@ -52,7 +52,7 @@
 #'               0, 0, 0, 0, 0), ncol=5, byrow=TRUE)
 #'
 #' nxt.comb <- next.comb.kb(target=0.3, npts=n, ntox=y, dose.curr=c(2, 2))
-#' summary.kb(nxt.comb)
+#' summary_kb(nxt.comb)
 #'
 #' @section Uses:
 #' This function uses \code{\link{get.boundary.comb.kb}}.
@@ -65,11 +65,11 @@
 #' Interval Design for Phase I Clinical Trials.
 #' \emph{Clinical Cancer Research}. 2017; 23:3994-4003.
 #' http://clincancerres.aacrjournals.org/content/23/15/3994.full-text.pdf
-#' 
+#'
 #' Pan H, Lin R, Yuan Y. Keyboard design for phase I drug-combination trials.
 #' \emph{Contemporary Clinical Trials}. 2020.
 #' https://doi.org/10.1016/j.cct.2020.105972
-#'
+#' @import Rcpp methods graphics stats
 #' @export
 next.comb.kb <- function(target, npts, ntox, dose.curr, n.earlystop = 100,
                          marginL = 0.05, marginR = 0.05, cutoff.eli = 0.95,

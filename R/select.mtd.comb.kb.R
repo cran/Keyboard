@@ -69,7 +69,7 @@
 #'   independent components of the trial design. When appropriate, another dose
 #'   selection procedure (e.g., one based on a fitted logistic model) can be used
 #'   to select the MTD after completing the trial using the Keyboard design.
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' ### Drug-combination trial ###
 #'
@@ -83,15 +83,14 @@
 #'
 #' sel.comb <- select.mtd.comb.kb(target=0.3, npts=n, ntox=y)
 #'
-#' summary.kb(sel.comb)
-#' plot.kb(sel.comb)
+#' summary_kb(sel.comb)
+#' plot_kb(sel.comb)
 #'
 #' @section Uses:
 #' This function uses \code{\link[Iso]{biviso}}.
 #'
 #' @family drug-combination functions
 #'
-#' @references
 #'
 #' @references
 #'
@@ -99,11 +98,11 @@
 #' Interval Design for Phase I Clinical Trials.
 #' \emph{Clinical Cancer Research}. 2017; 23:3994-4003.
 #' http://clincancerres.aacrjournals.org/content/23/15/3994.full-text.pdf
-#' 
+#'
 #' Pan H, Lin R, Yuan Y. Keyboard design for phase I drug-combination trials.
 #' \emph{Contemporary Clinical Trials}. 2020.
 #' https://doi.org/10.1016/j.cct.2020.105972
-#'
+#' @import Rcpp methods graphics stats
 #' @export
 select.mtd.comb.kb <- function(target, npts, ntox, cutoff.eli = 0.95,
                                extrasafe = FALSE, offset = 0.05) {

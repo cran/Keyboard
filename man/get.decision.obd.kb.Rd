@@ -56,13 +56,13 @@ get.decision.obd.kb(
 This function generates a boundary table and decision matrix for single-agent phase I/II trials using Keyboard design.
 }
 \details{
-The Keyboard design relies on the posterior distribution of the toxicity and efficacy to guide dosage transition. To determine whether to escalate or de-escalate the dose 
+The Keyboard design relies on the posterior distribution of the toxicity and efficacy to guide dosage transition. To determine whether to escalate or de-escalate the dose
 given the observed data at the current dose and a boundary table by investigators, we identify the
-interval that has the highest joint unit probability mass, which we refer to as the winner key. The decision corresponding to the winner key is the decision for dose assignment. 
+interval that has the highest joint unit probability mass, which we refer to as the winner key. The decision corresponding to the winner key is the decision for dose assignment.
 
 The prespecified boundary table is determined by the investigators.  The four subintervals for toxicity are  low, moderate, high, and unacceptable.  Generating these four intervals requires three investigators-provided boundaries, which can be specified as follows: \cr
 \enumerate{
-\item The low interval for toxicity is (0, toxicity.low); toxicity.low is the upper boundary for the low toxicity interval, which can be specified by using the argument \code{toxicity.low}. 
+\item The low interval for toxicity is (0, toxicity.low); toxicity.low is the upper boundary for the low toxicity interval, which can be specified by using the argument \code{toxicity.low}.
 \item The moderate interval for toxicity is (toxicity.low, toxicity.moderate); toxicity.low is the upper boundary for the low toxicity interval, which can be specified by using the argument \code{toxicity.low} and toxicity.moderate is the upper boundary for the moderate toxicity interval, which can be specified by using the argument \code{toxicity.moderate}.
 \item The high interval for toxicity is (toxicity.moderate, toxicity.high); toxicity.moderate is the upper boundary for the moderate toxicity interval, which can be specified by using the argument \code{toxicity.moderate} and toxicity.high is the upper boundary for the high toxicity interval, which can be specified by using the argument \code{toxicity.high}.
 \item The unacceptable interval for toxicity is (toxicity.high, 1); toxicity.high is the upper boundary for the high toxicity interval, which can be specified by using the argument \code{toxicity.high}.
@@ -70,7 +70,7 @@ The prespecified boundary table is determined by the investigators.  The four su
 
 Similarly, there are four subintervals for efficacy as follows:\cr
 \enumerate{
-\item The low interval for efficacy is (0, efficacy.low); efficacy.low the upper boundary for the low efficacy interval, which can be specified by using the argument \code{efficacy.low}. 
+\item The low interval for efficacy is (0, efficacy.low); efficacy.low the upper boundary for the low efficacy interval, which can be specified by using the argument \code{efficacy.low}.
 \item The moderate interval for efficacy is (efficacy.low, efficacy.moderate); efficacy.low is the upper boundary for the low efficacy interval, which can be specified by using the argument \code{efficacy.low} and efficacy.moderate is the upper boundary for the moderate efficacy interval, which can be specified by using the argument \code{efficacy.moderate}.
 \item The high interval for efficacy is (efficacy.moderate, efficacy.high); efficacy.moderate is the upper boundary for the moderate efficacy interval, which can be specified by using the argument \code{efficacy.moderate} and efficacy.high is the upper boundary for the high efficacy interval, which can be specified by using the argument \code{efficacy.high}.
 \item The superb interval for efficacy is (efficacy.high, 1); efficacy.high is the upper boundary for the high efficacy interval, which can be specified by using the argument \code{efficacy.high}.
@@ -90,7 +90,7 @@ Assuming that the toxicity probability is \eqn{p_i} and the efficacy probability
   Toxicity. unaccpetable \tab  (0.35,1.0)\tab  D\tab  D\tab  D \tab D\cr
 }
 
-For example, the combination interval (0.25,0.35) x (0,0.25) corresponds to decision "D". Therefore the next cohort of patients will be treated at the next lower level if the observed toxicity rate of the current dose falls in (0.25,0.35)  and the observed efficacy rate falls in (0,0.25). 
+For example, the combination interval (0.25,0.35) x (0,0.25) corresponds to decision "D". Therefore the next cohort of patients will be treated at the next lower level if the observed toxicity rate of the current dose falls in (0.25,0.35)  and the observed efficacy rate falls in (0,0.25).
 
 Bayesian rule is used to calculate the joint unit probability mass (JUPM) for the toxicity and efficacy combination intervals. For a given combination interval, JUPM is calculated as follows:
 \deqn{JUPM_{(a,b)}^{(c,d)} =Pr{p_j \in (a,b), q_j \in (c,d) | D} / (b-a)*(d-c) }
@@ -103,12 +103,12 @@ if at least 3 patients have been treated at a given dose and  the observed data 
 than 95\%, then we eliminate the current dose and any higher doses from the trial to avoid
 exposing future patients to unacceptably toxic doses. The probability
 threshold can be specified with \code{cutoff.eli.toxicity}. When a dose is
-eliminated, the design recommends the next lower dose for treating the next cohort of 
+eliminated, the design recommends the next lower dose for treating the next cohort of
 patients. If the lowest dose is unacceptably toxic, then the trial terminates early and
 no dose is selected as the OBD. This corresponds to a dose assignment of "DUT", which means to de-escalate due to unacceptable high toxicity and exclude the current dose and any dose higher than this dose from the trial.
 
 Futility rule:
-if at least 3 patients have been treated at a given dose and 
+if at least 3 patients have been treated at a given dose and
 the observed data indicate that the probability of the current dose's efficacy rate exceeding the target efficacy rate is less than 30\%,  then we eliminate this dose from the trial to avoid
 exposing future patients to these futile doses. The probability
 threshold can be specified with \code{cutoff.eli.efficacy}.  This corresponds to two possible dose assignments: "EUE" and "DUE", which both exclude the current dose from the trial. "EUE" denotes escalation due to unacceptable low efficacy;  "DUE" denotes de-escalation due to unacceptable low efficacy.
@@ -116,7 +116,7 @@ threshold can be specified with \code{cutoff.eli.efficacy}.  This corresponds to
 An attractive feature of the Keyboard design is that its dose escalation and
 de-escalation rule can be tabulated before implementing the trial. Thus,
 when conducting the trial, no real-time calculation or model fitting is needed, and we
- need to count only the number of patients, the number of DLTs, and the number of responses observed at the current dose and 
+ need to count only the number of patients, the number of DLTs, and the number of responses observed at the current dose and
 the decision to escalate or des-escalate the dose based on the pre-tabulated
 decision rules.
 }
@@ -162,6 +162,6 @@ Other single-agent phase I/II functions:
 \code{\link{select.obd.kb}()}
 }
 \author{
-Hongying Sun, Li Tang, and Haitao Pan
+Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 }
 \concept{single-agent phase I/II functions}

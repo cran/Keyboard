@@ -28,7 +28,7 @@
 #'
 #' @return A dose decision plot with the posterior distribution of the DLT rate
 #' of the current dose and the positions of the target and the strongest keys.
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #' ## Clear all plots before switching between graphical parameters
 #' opar <- par(no.readonly = TRUE)
@@ -48,8 +48,10 @@
 #' Pan H, Lin R, Yuan Y. Keyboard design for phase I drug-combination trials.
 #' \emph{Contemporary Clinical Trials}. 2020.
 #' https://doi.org/10.1016/j.cct.2020.105972
-#' 
+#'
+#' @import Rcpp methods graphics stats
 #' @export
+#'
 example.kb <- function(center, half_width, s1, s2, a, b) {
     ## Divide the range between 0 and 1 into keys of the same width, based on
     ## the target key's width.

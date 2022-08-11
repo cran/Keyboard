@@ -12,7 +12,7 @@
 #' @param r The number of responses.
 #'
 #' @return The function \code{decision.finding()} returns the decision.
-#' @author Hongying Sun, Li Tang, and Haitao Pan
+#' @author Xiaomeng Yuan, Chen Li, Hongying Sun, Li Tang and Haitao Pan
 #' @examples
 #'  output.matrix <- get.decision.obd.kb( toxicity.low = 0.15,
 #'                  toxicity.moderate= 0.25,
